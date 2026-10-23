@@ -1,19 +1,47 @@
 <!DOCTYPE html>
-    <head>
-        <title>Menú cine</title>
-        <link rel="stylesheet" href="misEstilos.css">
-        <script src="misScripts.js"></script>
-    </head>
-    <body>
-        <h1>¡Bienvenidos al cine!</h1>
-        <h3>--- Menú ---</h3>
-        <p>Queremos hacer de tu visita, una experiencia más placentera. Para eso, ingresa tu edad y selecciona el género que más te guste, y te recomendamos tu pelicula ideal.</p>
-        <p>Edad: <input type="text" id="edad"></p>   
-        <button onclick="recomendar('drama')">Drama</button>
-        <button onclick="recomendar('comedia')">Comedia</button>
-        <button onclick="recomendar('musical')">Musical</button>
-        <button onclick="recomendar('crimen')">Crimen</button>   
-        <h3>Nuestra recomendación:</h3>
-        <h2 id="recomendacion"></h2>
-    </body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMatch - Recomendador de Películas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="misEstilos.css">
+    <script src="misScripts.js" defer></script>
+</head>
+<body>
+    <main class="cine-container">
+        <div class="cine-card">
+            <header class="cine-header">
+                <span class="cine-badge">🍿 Cine en Casa</span>
+                <h1>¡Bienvenidos al cine!</h1>
+                <p class="cine-desc">Ingresá tu edad y seleccioná tu género preferido para descubrir tu película ideal.</p>
+            </header>
+
+            <div class="input-card">
+                <label for="edad">Tu Edad</label>
+                <div class="input-wrap">
+                    <input type="number" id="edad" min="1" max="120" placeholder="Ej: 24" inputmode="numeric">
+                </div>
+            </div>
+
+            <div class="genres-header">
+                <span>Seleccionar Género</span>
+            </div>
+
+            <div class="genres-grid">
+                <button type="button" class="genre-btn drama" onclick="recomendar('drama')">🎭 Drama</button>
+                <button type="button" class="genre-btn comedia" onclick="recomendar('comedia')">😂 Comedia</button>
+                <button type="button" class="genre-btn musical" onclick="recomendar('musical')">🎶 Musical</button>
+                <button type="button" class="genre-btn crimen" onclick="recomendar('crimen')">🕵️ Crimen</button>
+            </div>
+
+            <div class="rec-section" id="recSection">
+                <span class="rec-label">Nuestra Recomendación</span>
+                <h2 id="recomendacion">Elegí una categoría para comenzar</h2>
+            </div>
+        </div>
+    </main>
+</body>
 </html>
